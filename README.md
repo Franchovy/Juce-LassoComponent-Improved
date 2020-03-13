@@ -18,4 +18,7 @@ Then, use the `mouseDown()`, `mouseDrag()`, and `mouseUp()` overrides in your co
 **LASSO SOURCE**: A class used by the LassoComponent to manage the things that it selects. 
 *https://docs.juce.com/master/classLassoSource.html*
 
+**TO-DO:**
+Add components to interact with.
+Add an actual selection mechanism in `findLassoItemsInArea()`. I'd like to see different possibilities with efficiency trade-offs.
 Looking to add CHANGELISTENER mechanism to the SelectedItemsList. 
