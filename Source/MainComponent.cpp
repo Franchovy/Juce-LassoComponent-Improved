@@ -11,6 +11,7 @@
 //==============================================================================
 MainComponent::MainComponent()
 {
+    addChildComponent(lasso);
     setSize (600, 400);
 }
 
@@ -34,5 +35,21 @@ void MainComponent::resized()
     // This is called when the MainComponent is resized.
     // If you add any child components, this is where you should
     // update their positions.
+}
+
+void MainComponent::mouseDown(const MouseEvent &event) {
+    lasso.setVisible(true);
+    lasso.beginLasso(event, this);
+    Component::mouseDown(event);
+}
+
+void MainComponent::mouseDrag(const MouseEvent &event) {
+    lasso.dragLasso(event);
+    Component::mouseDrag(event);
+}
+
+void MainComponent::mouseUp(const MouseEvent &event) {
+    lasso.endLasso();
+    Component::mouseUp(event);
 }
 
