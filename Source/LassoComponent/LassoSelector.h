@@ -24,7 +24,7 @@ public:
 
         Path p;
         p.addRectangle(outline);
-        
+
         PathStrokeType strokeType(4);
         float dashLengths[2] = {10.0f, 10.0f};
         strokeType.createDashedStroke(p,p, dashLengths, 2);

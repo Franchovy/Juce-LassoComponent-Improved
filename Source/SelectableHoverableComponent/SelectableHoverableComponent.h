@@ -43,6 +43,8 @@ private:
     void addToSelected();
     void removeFromSelected();
 
+    static void clearSelected();
+
     static Array<SelectableHoverableComponent*> selectedComponents;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SelectableHoverableComponent)

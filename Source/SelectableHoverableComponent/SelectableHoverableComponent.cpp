@@ -63,9 +63,14 @@ void SelectableHoverableComponent::mouseDrag(const MouseEvent &event) {
 }
 
 void SelectableHoverableComponent::mouseUp(const MouseEvent &event) {
-    if (selected) {
-        removeFromSelected();
+    if (event.mods.isShiftDown() || event.mods.isCtrlDown() || event.mods.isCommandDown()) {
+        if (selected) {
+            removeFromSelected();
+        } else {
+            addToSelected();
+        }
     } else {
+        clearSelected();
         addToSelected();
     }
 
@@ -80,6 +85,14 @@ void SelectableHoverableComponent::addToSelected() {
 void SelectableHoverableComponent::removeFromSelected() {
     selected = false;
     selectedComponents.removeAllInstancesOf(this);
+}
+
+void SelectableHoverableComponent::clearSelected() {
+    auto removableCopy = selectedComponents;
+    for (auto item : removableCopy) {
+        item->removeFromSelected();
+        item->repaint();
+    }
 }
 
 
