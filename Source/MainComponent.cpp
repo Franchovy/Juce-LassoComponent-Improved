@@ -7,7 +7,7 @@
 */
 
 #include "MainComponent.h"
-#include "SelectableHoverableComponent.h"
+#include "TestComponent.h"
 
 //==============================================================================
 MainComponent::MainComponent()
@@ -21,15 +21,14 @@ MainComponent::MainComponent()
 
     auto numTestComponents = r.nextInt(Range<int>(20, 80));
     for (int i = 0; i < numTestComponents; i++) {
-        auto component = testComponents.add(std::make_unique<SelectableHoverableComponent>());
+        auto component = testComponents.add(std::make_unique<TestComponent>());
         component->setBounds(r.nextInt(getWidth() - 300), r.nextInt(getHeight() - 300)
                 , r.nextInt(Range<int>(100, 300)), r.nextInt(Range<int>(100,300)));
+
         addAndMakeVisible(component);
     }
 
     addChildComponent(lasso);
-
-    repaint();
 }
 
 MainComponent::~MainComponent()
@@ -39,18 +38,12 @@ MainComponent::~MainComponent()
 //==============================================================================
 void MainComponent::paint (Graphics& g)
 {
-
+    Component::paint(g);
 }
 
 void MainComponent::resized()
 {
-    Random r;
-
-    for (auto component : testComponents) {
-        component->setBounds(r.nextInt(getWidth() - 300), r.nextInt(getHeight() - 300)
-                , r.nextInt(Range<int>(100, 300)), r.nextInt(Range<int>(100,300)));
-        addAndMakeVisible(component);
-    }
+    Component::resized();
 }
 
 void MainComponent::mouseDown(const MouseEvent &event) {

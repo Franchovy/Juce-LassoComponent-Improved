@@ -20,16 +20,16 @@ public:
 
     //==============================================================================
 
-    void mouseEnter(const MouseEvent &event) override;
-    void mouseExit(const MouseEvent &event) override;
+    virtual void mouseEnter(const MouseEvent &event) override;
+    virtual void mouseExit(const MouseEvent &event) override;
 
-    void mouseDown(const MouseEvent &event) override;
-    void mouseDrag(const MouseEvent &event) override;
-    void mouseUp(const MouseEvent &event) override;
+    virtual void mouseDown(const MouseEvent &event) override;
+    virtual void mouseDrag(const MouseEvent &event) override;
+    virtual void mouseUp(const MouseEvent &event) override;
 
     //==============================================================================
 
-    void paint(Graphics &g) override;
+    virtual void paint(Graphics &g) override;
 
 private:
     //==============================================================================

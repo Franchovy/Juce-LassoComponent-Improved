@@ -33,20 +33,20 @@ void SelectableHoverableComponent::mouseExit(const MouseEvent &event) {
 }
 
 void SelectableHoverableComponent::paint(Graphics &g) {
-    auto outline = getBounds();
-    
+    auto outline = getLocalBounds();
+
     // Drawable outline based on selected or hovered
     g.setColour(Colours::blue);
 
     if (selected) {
-        g.drawRect(outline, 2);
+        g.drawRect(outline, 4);
 
     } else if (hovered) {
         Path p;
         p.addRectangle(outline);
 
-        PathStrokeType strokeType(2);
-        float dashLengths[2] = {2.0f, 3.0f};
+        PathStrokeType strokeType(4);
+        float dashLengths[2] = {8.0f, 6.0f};
         strokeType.createDashedStroke(p, p, dashLengths, 2);
 
         g.fillPath(p);

@@ -4,14 +4,19 @@
               displaySplashScreen="1">
   <MAINGROUP id="dA9e5O" name="LassoExample">
     <GROUP id="{5628C352-12FF-D474-221D-4739792B631E}" name="Source">
+      <GROUP id="{0F5CB6EA-636F-81AC-CBD6-E80AF1A41EDC}" name="SelectableHoverableComponent">
+        <FILE id="cuXk7t" name="SelectableHoverableComponent.cpp" compile="1"
+              resource="0" file="Source/SelectableHoverableComponent.cpp"/>
+        <FILE id="dd7BXJ" name="SelectableHoverableComponent.h" compile="0"
+              resource="0" file="Source/SelectableHoverableComponent.h"/>
+      </GROUP>
       <GROUP id="{BA3C4026-D7F0-ED5D-FF7A-481DB6FE2702}" name="LassoComponent"/>
       <FILE id="G8ZHnv" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="w6W86E" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="cuXk7t" name="SelectableHoverableComponent.cpp" compile="1"
-            resource="0" file="Source/SelectableHoverableComponent.cpp"/>
-      <FILE id="dd7BXJ" name="SelectableHoverableComponent.h" compile="0"
-            resource="0" file="Source/SelectableHoverableComponent.h"/>
+      <FILE id="pqwBYW" name="TestComponent.cpp" compile="1" resource="0"
+            file="Source/TestComponent.cpp"/>
+      <FILE id="k1Yvjs" name="TestComponent.h" compile="0" resource="0" file="Source/TestComponent.h"/>
       <FILE id="FPbxpJ" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
     </GROUP>
   </MAINGROUP>
