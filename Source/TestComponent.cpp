@@ -11,8 +11,13 @@
 #include "TestComponent.h"
 
 void TestComponent::paint(Graphics &g) {
+    auto bounds = getLocalBounds().expanded(-20).toFloat();
+
     g.setColour(Colours::whitesmoke);
-    g.fillEllipse(getLocalBounds().expanded(-20).toFloat());
+    g.fillEllipse(bounds);
+
+    g.setColour(Colours::black);
+    g.drawEllipse(bounds, 2);
 
     SelectableHoverableComponent::paint(g);
 }
