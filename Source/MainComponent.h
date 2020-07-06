@@ -9,13 +9,15 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "SelectableHoverableComponent/SelectableHoverableComponent.h"
+#include "LassoComponent/LassoSelector.h"
 
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent : public Component, LassoSource<Component*>
+class MainComponent : public Component, LassoSource<SelectableHoverableComponent*>
 {
 public:
     //==============================================================================
@@ -36,16 +38,16 @@ public:
 private:
     //==============================================================================
     // Lasso variables and methods
-    LassoComponent<Component*> lasso;
+    LassoSelector<SelectableHoverableComponent*> lasso;
 
-    SelectedItemSet<Component*> itemsSet;
-    void findLassoItemsInArea(Array<Component*> &itemsFound, const Rectangle<int> &area) override {
+    SelectedItemSet<SelectableHoverableComponent*> itemsSet;
+    void findLassoItemsInArea(Array<SelectableHoverableComponent*> &itemsFound, const Rectangle<int> &area) override {
 
     }
 
-    SelectedItemSet<Component *> &getLassoSelection() override {
+    SelectedItemSet<SelectableHoverableComponent *> &getLassoSelection() override {
         // Create empty item set
-        itemsSet = SelectedItemSet<Component*>();
+        itemsSet = SelectedItemSet<SelectableHoverableComponent*>();
 
         return itemsSet;
     }

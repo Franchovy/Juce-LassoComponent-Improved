@@ -11,7 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "SelectableHoverableComponent.h"
+#include "SelectableHoverableComponent/SelectableHoverableComponent.h"
 
 class TestComponent : public SelectableHoverableComponent
 {
